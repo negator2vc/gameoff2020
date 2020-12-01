@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://graphics/hud_bg.png" type="Texture" id=1]
+[ext_resource path="res://fonts/mainFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/hud.gd" type="Script" id=3]
+[ext_resource path="res://fonts/titleFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/MessageBox.gd" type="Script" id=5]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="TimePanel" type="ColorRect" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 340.0
+margin_bottom = 120.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeLabel" type="Label" parent="TimePanel"]
+margin_right = 320.0
+margin_bottom = 105.0
+custom_fonts/font = ExtResource( 2 )
+text = "Time Left : 4 hours"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObjectivePanel" type="ColorRect" parent="."]
+margin_left = 1580.0
+margin_top = 20.0
+margin_right = 1900.0
+margin_bottom = 120.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 0.392157 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ObjectivesLabel" type="Label" parent="ObjectivePanel"]
+margin_right = 320.0
+margin_bottom = 105.0
+custom_fonts/font = ExtResource( 2 )
+text = "Alien Sites : 0"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomPanel" type="NinePatchRect" parent="."]
+margin_left = 18.0
+margin_top = 956.0
+margin_right = 1909.0
+margin_bottom = 1066.0
+texture = ExtResource( 1 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BottomPanel"]
+margin_left = 22.0
+margin_top = 24.0
+margin_right = 1862.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "New Aliens appeared on the radar!"
+align = 1
+valign = 1
+
+[node name="TitlePanel" type="ColorRect" parent="."]
+self_modulate = Color( 0, 0, 0, 0.878431 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="TitlePanel"]
+margin_top = 200.0
+margin_right = 1920.0
+margin_bottom = 513.0
+custom_fonts/font = ExtResource( 4 )
+text = "Trouble at the Dark Side of the Moon"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="TitlePanel"]
+margin_top = 660.0
+margin_right = 1920.0
+margin_bottom = 740.0
+custom_fonts/font = ExtResource( 2 )
+text = "Press <SPACE> to start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel" type="Label" parent="TitlePanel"]
+margin_left = 20.0
+margin_top = 820.0
+margin_right = 1900.0
+margin_bottom = 1040.0
+custom_fonts/font = ExtResource( 2 )
+text = "Code & Design by Vasilis Chonianakis, Graphics by @BurntRobot
+=== Additional Credits ===
+Icons from game-icons.net,  thenounproject.com
+Music & Sounds by Eric Matyas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageBox" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 420.0
+margin_top = 160.0
+margin_right = 1500.0
+margin_bottom = 800.0
+texture = ExtResource( 1 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MessageBox"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 1040.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "adsdadas"
+autowrap = true

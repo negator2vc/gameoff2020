@@ -1,0 +1,245 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://graphics/Illustration23.png" type="Texture" id=1]
+[ext_resource path="res://graphics/lunar-module.png" type="Texture" id=2]
+[ext_resource path="res://src/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/region.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/alienSite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/worldScreen.gd" type="Script" id=6]
+[ext_resource path="res://src/hud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sounds/Laser-Shot-2.wav" type="AudioStream" id=8]
+
+[node name="WorldScreen" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Region1" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 374.182, 514.332 )
+adjacentRegions = [ 2, 7, 6, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region1" index="0"]
+polygon = PoolVector2Array( -369.866, -248.067, 292.624, -126.093, 295.015, 211.131, -367.474, 304.406 )
+
+[node name="AlienPosition1" parent="Regions/Region1/AlienPositions" index="0"]
+position = Vector2( 113.185, -75.0497 )
+
+[node name="AlienPosition2" parent="Regions/Region1/AlienPositions" index="1"]
+position = Vector2( 179.971, -19.6552 )
+
+[node name="AlienPosition3" parent="Regions/Region1/AlienPositions" index="2"]
+position = Vector2( 144.423, 53.4317 )
+
+[node name="AlienPosition4" type="Position2D" parent="Regions/Region1/AlienPositions" index="3"]
+position = Vector2( 196.748, -87.1072 )
+
+[node name="AlienPosition5" type="Position2D" parent="Regions/Region1/AlienPositions" index="4"]
+position = Vector2( 233.241, 66.8001 )
+
+[node name="AlienPosition6" type="Position2D" parent="Regions/Region1/AlienPositions" index="5"]
+position = Vector2( 9.52002, -85.5205 )
+
+[node name="AlienPosition7" type="Position2D" parent="Regions/Region1/AlienPositions" index="6"]
+position = Vector2( -76.1604, -99.8006 )
+
+[node name="PlayerPosition" parent="Regions/Region1" index="2"]
+position = Vector2( 50.61, 6.15247 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region1" index="3"]
+position = Vector2( -267.46, 61.3014 )
+
+[node name="Region2" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 503.332, 143.65 )
+id = 2
+adjacentRegions = [ 3, 7, 1, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region2" index="0"]
+polygon = PoolVector2Array( -494.232, 98.6978, 199.349, 232.631, 546.14, 175.231, 536.573, -121.335, -489.448, -126.118 )
+
+[node name="AlienPosition1" parent="Regions/Region2/AlienPositions" index="0"]
+position = Vector2( 144.347, 72.3068 )
+
+[node name="AlienPosition2" parent="Regions/Region2/AlienPositions" index="1"]
+position = Vector2( 235.317, 71.6583 )
+
+[node name="AlienPosition3" parent="Regions/Region2/AlienPositions" index="2"]
+position = Vector2( 310.471, 71.8135 )
+
+[node name="PlayerPosition" parent="Regions/Region2" index="2"]
+position = Vector2( 273.42, 130.107 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region2" index="3"]
+position = Vector2( -17.6267, 81.6582 )
+
+[node name="Region3" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 1470.87, 161.774 )
+id = 3
+adjacentRegions = [ 2, 4, 7, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region3" index="0"]
+position = Vector2( 3.25366, -3.25354 )
+polygon = PoolVector2Array( -407.049, 137.973, -414.224, -137.067, 427.64, -139.459, 432.423, 121.232, -189.408, 228.856 )
+
+[node name="AlienPosition1" parent="Regions/Region3/AlienPositions" index="0"]
+position = Vector2( -77.8546, 106.486 )
+
+[node name="AlienPosition2" parent="Regions/Region3/AlienPositions" index="1"]
+position = Vector2( 1.33557, 133.943 )
+
+[node name="AlienPosition3" parent="Regions/Region3/AlienPositions" index="2"]
+position = Vector2( 66.4915, 98.1024 )
+
+[node name="PlayerPosition" parent="Regions/Region3" index="2"]
+position = Vector2( -169.262, 145.974 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region3" index="3"]
+position = Vector2( 161.883, 100.164 )
+
+[node name="Region4" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 1556.97, 530.948 )
+id = 4
+adjacentRegions = [ 3, 5, 7, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region4" index="0"]
+polygon = PoolVector2Array( 334.366, -207.284, 341.54, 283.006, -256.374, 184.948, -270.724, -116.401 )
+
+[node name="AlienPosition1" parent="Regions/Region4/AlienPositions" index="0"]
+position = Vector2( -100.277, -16.286 )
+
+[node name="AlienPosition2" parent="Regions/Region4/AlienPositions" index="1"]
+position = Vector2( -89.4081, 70.8844 )
+
+[node name="AlienPosition3" parent="Regions/Region4/AlienPositions" index="2"]
+position = Vector2( 25.3101, 36.9668 )
+
+[node name="PlayerPosition" parent="Regions/Region4" index="2"]
+position = Vector2( -181.685, 38.8781 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region4" index="3"]
+position = Vector2( 102.913, -11.9466 )
+
+[node name="Region5" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 1521.33, 937.227 )
+id = 5
+adjacentRegions = [ 7, 4, 6, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region5" index="0"]
+polygon = PoolVector2Array( 367.739, -98.6221, 378.554, 117.68, -425.37, 117.68, -432.58, -123.857, -223.488, -203.168 )
+
+[node name="AlienPosition1" parent="Regions/Region5/AlienPositions" index="0"]
+position = Vector2( -111.383, -127.353 )
+
+[node name="AlienPosition2" parent="Regions/Region5/AlienPositions" index="1"]
+position = Vector2( -185.907, -61.6254 )
+
+[node name="AlienPosition3" parent="Regions/Region5/AlienPositions" index="2"]
+position = Vector2( -276.656, -37.9218 )
+
+[node name="PlayerPosition" parent="Regions/Region5" index="2"]
+position = Vector2( -236.433, -120.584 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region5" index="3"]
+position = Vector2( 8.28198, -66.3913 )
+
+[node name="Region6" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 456.807, 949.93 )
+id = 6
+adjacentRegions = [ 1, 7, 5, 0 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region6" index="0"]
+polygon = PoolVector2Array( -445.967, -122.14, -442.362, 104.977, 606.705, 97.7672, 592.285, -125.745, 238.991, -205.056 )
+
+[node name="AlienPosition1" parent="Regions/Region6/AlienPositions" index="0"]
+position = Vector2( 22.4224, -106.726 )
+
+[node name="AlienPosition2" parent="Regions/Region6/AlienPositions" index="1"]
+position = Vector2( 86.416, -47.0694 )
+
+[node name="AlienPosition3" parent="Regions/Region6/AlienPositions" index="2"]
+position = Vector2( 170.319, -45.8824 )
+
+[node name="PlayerPosition" parent="Regions/Region6" index="2"]
+position = Vector2( 148.871, -117.678 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region6" index="3"]
+position = Vector2( -174.929, -44.184 )
+
+[node name="Region7" parent="Regions" instance=ExtResource( 4 )]
+position = Vector2( 1047.55, 555.306 )
+id = 7
+adjacentRegions = [ 1, 2, 3, 4, 5, 6 ]
+
+[node name="CollisionPolygon2D" parent="Regions/Region7" index="0"]
+polygon = PoolVector2Array( -362.564, -163.727, 15.9656, -221.407, 207.033, -142.096, 228.663, 153.517, 12.3604, 240.038, -340.934, 153.517 )
+
+[node name="AlienPosition1" parent="Regions/Region7/AlienPositions" index="0"]
+position = Vector2( -48.441, -62.0476 )
+
+[node name="AlienPosition2" parent="Regions/Region7/AlienPositions" index="1"]
+position = Vector2( -26.4749, 20.3568 )
+
+[node name="AlienPosition3" parent="Regions/Region7/AlienPositions" index="2"]
+position = Vector2( -48.6756, 76.5947 )
+
+[node name="PlayerPosition" parent="Regions/Region7" index="2"]
+position = Vector2( -151.533, 8.72516 )
+
+[node name="AlienSpawnPosition" parent="Regions/Region7" index="3"]
+position = Vector2( 78.6055, -62.6901 )
+
+[node name="Entities" type="YSort" parent="."]
+
+[node name="LunarModule" type="Sprite" parent="Entities"]
+position = Vector2( 318.587, 497.496 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="Entities" instance=ExtResource( 3 )]
+position = Vector2( 93.8712, 377.795 )
+
+[node name="Aliens" type="YSort" parent="Entities"]
+
+[node name="AlienSite1" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( 790.164, 809.204 )
+regionId = 6
+
+[node name="AlienSite2" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( 1340.74, 134.867 )
+regionId = 3
+
+[node name="AlienSite3" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( 1664.42, 436.335 )
+regionId = 4
+
+[node name="AlienSite4" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( 1624.75, 839.351 )
+regionId = 5
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="ShootAlien" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="AttackColony" type="AudioStreamPlayer" parent="Sounds"]
+
+[editable path="Regions/Region1"]
+
+[editable path="Regions/Region2"]
+
+[editable path="Regions/Region3"]
+
+[editable path="Regions/Region4"]
+
+[editable path="Regions/Region5"]
+
+[editable path="Regions/Region6"]
+
+[editable path="Regions/Region7"]

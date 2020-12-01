@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/region.gd" type="Script" id=1]
+
+[node name="Region" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="AlienPositions" type="Node2D" parent="."]
+
+[node name="AlienPosition1" type="Position2D" parent="AlienPositions"]
+position = Vector2( 98.058, -86.0997 )
+
+[node name="AlienPosition2" type="Position2D" parent="AlienPositions"]
+position = Vector2( 95.666, 0 )
+
+[node name="AlienPosition3" type="Position2D" parent="AlienPositions"]
+position = Vector2( 102.841, 86.0996 )
+
+[node name="PlayerPosition" type="Position2D" parent="."]
+position = Vector2( -96.275, 0 )
+
+[node name="AlienSpawnPosition" type="Position2D" parent="."]
+position = Vector2( -86.0996, 81.6582 )
